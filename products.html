@@ -4,16 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Explore fresh eggs, broiler chickens and poultry products from GreenNest Poultry Supplies.">
+  <meta name="description" content="Explore fresh eggs, broiler chickens and poultry supplies from GreenNest Poultry Supplies in Malelane, Mpumalanga.">
 
-  <title>GreenNest Poultry Supplies | Products</title>
+  <meta name="keywords" content="GreenNest Poultry Supplies, fresh eggs, broiler chickens, poultry supplies, Malelane poultry">
+
+  <meta name="author" content="GreenNest Poultry Supplies">
+
+  <title>Fresh Eggs and Poultry Products | GreenNest</title>
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- Website Header and Navigation -->
   <header class="site-header">
     <div class="container nav-wrap">
 
@@ -34,7 +37,6 @@
 
   <main>
 
-    <!-- Products Introduction -->
     <section class="section">
       <div class="container">
 
@@ -57,13 +59,40 @@
       </div>
     </section>
 
-    <!-- Product Cards -->
     <section class="section">
       <div class="container">
 
-        <div class="cards">
+        <h2>Find Your Products</h2>
 
-          <article class="card product">
+        <p>
+          Search our products or select a category to find
+          what you need.
+        </p>
+
+        <div class="product-search">
+
+          <label for="productSearch">Search products</label>
+
+          <input
+            type="search"
+            id="productSearch"
+            placeholder="Search eggs, chickens or supplies..."
+          >
+
+          <label for="productCategory">Filter by category</label>
+
+          <select id="productCategory">
+            <option value="all">All Products</option>
+            <option value="eggs">Eggs</option>
+            <option value="chicken">Chickens</option>
+            <option value="supplies">Poultry Supplies</option>
+          </select>
+
+        </div>
+
+        <div class="cards" id="productList">
+
+          <article class="card product" data-category="eggs">
 
             <div class="product-image">
               <img
@@ -80,9 +109,13 @@
 
             <p class="price">From R55 per tray*</p>
 
+            <a class="button" href="enquiry.html">
+              Enquire Now
+            </a>
+
           </article>
 
-          <article class="card product">
+          <article class="card product" data-category="chicken">
 
             <div class="product-image">
               <img
@@ -99,9 +132,13 @@
 
             <p class="price">Price on enquiry*</p>
 
+            <a class="button" href="enquiry.html">
+              Enquire Now
+            </a>
+
           </article>
 
-          <article class="card product">
+          <article class="card product" data-category="supplies">
 
             <div class="product-image">
               <img
@@ -118,11 +155,18 @@
 
             <p class="price">Price on enquiry*</p>
 
+            <a class="button" href="enquiry.html">
+              Enquire Now
+            </a>
+
           </article>
 
         </div>
 
-        <!-- Product Enquiry Section -->
+        <p id="noProducts" hidden>
+          No products match your search. Please try another keyword.
+        </p>
+
         <div class="product-enquiry">
 
           <h2>Interested in our products?</h2>
@@ -148,7 +192,6 @@
 
   </main>
 
-  <!-- Website Footer -->
   <footer class="site-footer">
     <div class="container">
       <p>
@@ -157,6 +200,17 @@
       </p>
     </div>
   </footer>
+
+  <!-- Product Image Lightbox -->
+  <div id="imageLightbox" class="lightbox" hidden>
+    <button id="closeLightbox" type="button" aria-label="Close image">
+      &times;
+    </button>
+
+    <img id="lightboxImage" src="" alt="">
+  </div>
+
+  <script src="js/script.js" defer></script>
 
 </body>
 </html>
