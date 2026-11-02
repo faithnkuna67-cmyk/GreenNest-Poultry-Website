@@ -4,16 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Send a product or supply enquiry to GreenNest Poultry Supplies.">
+  <meta name="description" content="Enquire about fresh eggs, broiler chickens and poultry supplies from GreenNest Poultry Supplies in Malelane, Mpumalanga.">
 
-  <title>GreenNest Poultry Supplies | Enquiries</title>
+  <meta name="keywords" content="poultry enquiries, fresh eggs, broiler chickens, poultry supplies, Malelane">
+
+  <meta name="author" content="GreenNest Poultry Supplies">
+
+  <title>Product Enquiries | GreenNest Poultry Supplies</title>
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 
 <body>
 
-  <!-- Website Header and Navigation -->
+  <!-- WEBSITE HEADER -->
+
   <header class="site-header">
     <div class="container nav-wrap">
 
@@ -32,91 +38,191 @@
     </div>
   </header>
 
+
+  <!-- MAIN ENQUIRY SECTION -->
+
   <main class="section">
-    <div class="container narrow">
+    <div class="container">
 
-      <p class="eyebrow">Get in touch</p>
+      <p class="eyebrow">GREENNEST POULTRY SUPPLIES</p>
 
-      <h1>Make an Enquiry</h1>
+      <h1>Make a Product Enquiry</h1>
 
       <p>
-        Complete the form below to ask about products,
-        availability or supply requirements.
+        Interested in our poultry products? Complete the
+        enquiry form below to ask about product availability,
+        quantities and pricing.
       </p>
 
-      <!-- Customer Enquiry Form -->
-      <form id="enquiryForm">
+      <p>
+        We supply households, local customers and small
+        businesses in Malelane, Mpumalanga.
+      </p>
+
+
+      <!-- CUSTOMER ENQUIRY FORM -->
+
+      <form id="enquiryForm" action="#" method="post">
+
+        <h2>Customer Information</h2>
 
         <label for="name">Full Name *</label>
+
         <input
+          type="text"
           id="name"
           name="name"
-          type="text"
-          autocomplete="name"
           placeholder="Enter your full name"
+          autocomplete="name"
+          minlength="3"
+          maxlength="80"
           required>
+
 
         <label for="email">Email Address *</label>
+
         <input
+          type="email"
           id="email"
           name="email"
-          type="email"
-          autocomplete="email"
           placeholder="Enter your email address"
+          autocomplete="email"
           required>
 
-        <label for="phone">Phone Number</label>
+
+        <label for="phone">Phone Number *</label>
+
         <input
+          type="tel"
           id="phone"
           name="phone"
-          type="tel"
+          placeholder="e.g. 082 123 4567"
           autocomplete="tel"
-          placeholder="Enter your phone number">
+          pattern="[0-9 +()-]{7,20}"
+          title="Enter a valid phone number using 7 to 20 digits or phone symbols."
+          required>
 
-        <label for="type">Enquiry Type *</label>
-        <select id="type" name="type" required>
-          <option value="">Select an option</option>
-          <option value="Product availability">Product availability</option>
-          <option value="Household order">Household order</option>
-          <option value="Business supply">Business supply</option>
-          <option value="General question">General question</option>
+
+        <h2>Product Information</h2>
+
+        <label for="product">Select a Product *</label>
+
+        <select id="product" name="product" required>
+
+          <option value="">Choose a product</option>
+
+          <option value="eggs">Fresh Eggs</option>
+
+          <option value="chicken">Broiler Chickens</option>
+
+          <option value="supplies">Poultry Supplies</option>
+
         </select>
 
-        <label for="message">Message *</label>
+
+        <label for="quantity">Required Quantity *</label>
+
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          max="10000"
+          placeholder="Enter the quantity required"
+          required>
+
+
+        <label for="unit">Quantity Unit *</label>
+
+        <select id="unit" name="unit" required>
+
+          <option value="">Select quantity unit</option>
+
+          <option value="trays">Trays</option>
+
+          <option value="chickens">Chickens</option>
+
+          <option value="items">Individual items</option>
+
+        </select>
+
+
+        <label for="type">Enquiry Type *</label>
+
+        <select id="type" name="type" required>
+
+          <option value="">Select an enquiry type</option>
+
+          <option value="Product availability">
+            Product availability
+          </option>
+
+          <option value="Household order">
+            Household order
+          </option>
+
+          <option value="Business supply">
+            Business supply
+          </option>
+
+          <option value="Bulk order">
+            Bulk order
+          </option>
+
+          <option value="General question">
+            General question
+          </option>
+
+        </select>
+
+
+        <label for="message">Additional Information *</label>
+
         <textarea
           id="message"
           name="message"
           rows="6"
-          placeholder="Type your enquiry here"
+          minlength="10"
+          maxlength="1000"
+          placeholder="Tell us more about your requirements..."
           required></textarea>
+
 
         <button class="button" type="submit">
           Submit Enquiry
         </button>
 
-        <p
+
+        <!-- JAVASCRIPT RESPONSE -->
+
+        <div
           id="formMessage"
           class="form-message"
           role="status"
-          aria-live="polite">
-        </p>
+          aria-live="polite"
+          tabindex="-1">
+        </div>
 
       </form>
 
     </div>
   </main>
 
-  <!-- Website Footer -->
+
+  <!-- WEBSITE FOOTER -->
+
   <footer class="site-footer">
     <div class="container">
+
       <p>
         &copy; 2026 GreenNest Poultry Supplies.
         Academic project website.
       </p>
+
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
-
 </body>
 </html>
+
+  
