@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+  <style>
+    .heading { font: bold 28px Arial; fill: #173b25; }
+    .label { font: bold 17px Arial; fill: #203025; }
+    .small { font: 14px Arial; fill: #555; }
+    .line { fill: #fff; stroke: #777; stroke-width: 2; }
+    .dark { fill: #dce9dc; stroke: #777; stroke-width: 2; }
+    .image { fill: #e9e9e9; stroke: #777; stroke-width: 2; }
+  </style>
+
+  <text x="40" y="45" class="heading">GreenNest Poultry Supplies – Website Wireframes</text>
+  <text x="40" y="75" class="small">Desktop layout plan for the five main website pages</text>
+
+  <!-- HOME -->
+  <text x="40" y="125" class="label">1. Home Page</text>
+  <rect x="40" y="145" width="520" height="260" class="line"/>
+  <rect x="55" y="160" width="490" height="35" class="dark"/>
+  <text x="65" y="183" class="small">Logo / Brand</text>
+  <text x="340" y="183" class="small">Home | About | Products | Enquiries | Contact</text>
+  <rect x="55" y="210" width="490" height="110" class="dark"/>
+  <text x="75" y="250" class="label">Welcome to GreenNest</text>
+  <text x="75" y="275" class="small">Introductory text and call-to-action button</text>
+  <rect x="55" y="335" width="490" height="55" class="image"/>
+  <text x="220" y="368" class="small">Featured poultry image</text>
+
+  <!-- ABOUT -->
+  <text x="640" y="125" class="label">2. About Page</text>
+  <rect x="640" y="145" width="520" height="260" class="line"/>
+  <rect x="655" y="160" width="490" height="35" class="dark"/>
+  <text x="665" y="183" class="small">Logo / Navigation</text>
+  <rect x="655" y="210" width="230" height="175" class="image"/>
+  <text x="700" y="300" class="small">Poultry image</text>
+  <rect x="900" y="210" width="245" height="175" class="dark"/>
+  <text x="920" y="245" class="label">About Us</text>
+  <text x="920" y="275" class="small">Business background</text>
+  <text x="920" y="300" class="small">Mission and vision</text>
+  <text x="920" y="325" class="small">Our values</text>
+
+  <!-- PRODUCTS -->
+  <text x="40" y="465" class="label">3. Products Page</text>
+  <rect x="40" y="485" width="520" height="260" class="line"/>
+  <rect x="55" y="500" width="490" height="35" class="dark"/>
+  <text x="65" y="523" class="small">Logo / Navigation</text>
+  <text x="65" y="565" class="label">Our Products</text>
+  <rect x="55" y="580" width="150" height="145" class="image"/>
+  <rect x="220" y="580" width="150" height="145" class="image"/>
+  <rect x="385" y="580" width="150" height="145" class="image"/>
+  <text x="90" y="635" class="small">Product 1</text>
+  <text x="255" y="635" class="small">Product 2</text>
+  <text x="420" y="635" class="small">Product 3</text>
+  <text x="85" y="680" class="small">Details / Price</text>
+  <text x="250" y="680" class="small">Details / Price</text>
+  <text x="415" y="680" class="small">Details / Price</text>
+
+  <!-- ENQUIRIES -->
+  <text x="640" y="465" class="label">4. Enquiries Page</text>
+  <rect x="640" y="485" width="520" height="260" class="line"/>
+  <rect x="655" y="500" width="490" height="35" class="dark"/>
+  <text x="665" y="523" class="small">Logo / Navigation</text>
+  <text x="665" y="565" class="label">Make an Enquiry</text>
+  <rect x="655" y="580" width="490" height="35" class="line"/>
+  <text x="670" y="603" class="small">Full name field</text>
+  <rect x="655" y="625" width="490" height="35" class="line"/>
+  <text x="670" y="648" class="small">Email field</text>
+  <rect x="655" y="670" width="490" height="35" class="line"/>
+  <text x="670" y="693" class="small">Message field / Submit button</text>
+
+  <!-- CONTACT -->
+  <text x="40" y="805" class="label">5. Contact Page</text>
+  <rect x="40" y="825" width="520" height="260" class="line"/>
+  <rect x="55" y="840" width="490" height="35" class="dark"/>
+  <text x="65" y="863" class="small">Logo / Navigation</text>
+  <text x="65" y="905" class="label">Contact GreenNest</text>
+  <rect x="55" y="920" width="230" height="145" class="dark"/>
+  <text x="75" y="955" class="small">Contact details</text>
+  <text x="75" y="985" class="small">Business location</text>
+  <text x="75" y="1015" class="small">Contact information</text>
+  <rect x="300" y="920" width="245" height="145" class="image"/>
+  <text x="370" y="995" class="small">Map / Location area</text>
+
+  <!-- MOBILE -->
+  <text x="640" y="805" class="label">6. Mobile Layout Concept</text>
+  <rect x="760" y="825" width="220" height="390" rx="15" class="line"/>
+  <rect x="775" y="845" width="190" height="35" class="dark"/>
+  <text x="795" y="868" class="small">Logo / Menu</text>
+  <rect x="775" y="895" width="190" height="75" class="dark"/>
+  <text x="815" y="935" class="small">Welcome</text>
+  <rect x="775" y="985" width="190" height="65" class="image"/>
+  <text x="830" y="1022" class="small">Image</text>
+  <rect x="775" y="1065" width="190" height="55" class="dark"/>
+  <text x="810" y="1098" class="small">Content</text>
+  <rect x="775" y="1135" width="190" height="55" class="dark"/>
+  <text x="810" y="1168" class="small">Footer</text>
+
+  <text x="40" y="1290" class="label">Design Notes</text>
+  <text x="40" y="1325" class="small">• Desktop pages use a consistent header, navigation and footer.</text>
+  <text x="40" y="1355" class="small">• Product cards use a three-column layout on wider screens.</text>
+  <text x="40" y="1385" class="small">• Mobile content changes to a single-column layout for easier reading.</text>
+  <text x="40" y="1415" class="small">• These wireframes show the planned structure, not the final visual design.</text>
+</svg>
