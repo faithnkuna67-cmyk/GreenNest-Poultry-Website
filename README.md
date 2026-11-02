@@ -100,7 +100,11 @@ The following screen layouts were checked:
 
 The tests checked navigation, image display, product cards, text readability, page layout and the enquiry form.
 
-Screenshots showing the three screen sizes are available in the screenshots/ folder.
+Desktop Testing
+
+Tablet Testing
+
+Mobile Testing
 
 7. JavaScript Functionality
 
