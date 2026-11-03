@@ -1,270 +1,308 @@
-# GreenNest Poultry Supplies
-
-**WEDE5020 – Portfolio of Evidence (POE): Parts 1, 2 and 3**
+# GreenNest Poultry Supplies Website
 
 ## 1. Project Overview
 
-GreenNest Poultry Supplies is a small business website project based in Malelane, Mpumalanga, South Africa.
+GreenNest Poultry Supplies is a business website developed to promote poultry products and supplies in Malelane, Mpumalanga, South Africa.
 
-The website provides information about poultry products and services, including fresh eggs, broiler chickens and poultry supplies.
+The website provides information about the business, its products and services, and allows customers to submit product enquiries and general messages.
 
-The purpose of this project is to create a professional, user-friendly and responsive website that allows visitors to explore the business, view products, make enquiries and find general business information.
+The main purpose of the website is to establish an online presence for GreenNest Poultry Supplies, improve communication with customers and make information about poultry products easily accessible.
 
-## 2. Website Pages
+**Business Information**
 
-The website consists of five main pages:
+- Business Name: GreenNest Poultry Supplies
+- Location: Malelane, Mpumalanga, South Africa
+- Contact Email: faithnkuna67@gmail.com
+- Website: https://faithnkuna67-cmyk.github.io/GreenNest-Poultry-Website/
 
-- **Home (index.html):** Introduces GreenNest Poultry Supplies and provides links to the other pages.
-- **About (about.html):** Explains the business, its mission, vision and values.
-- **Products (products.html):** Displays the products and poultry supplies offered.
-- **Enquiries (enquiry.html):** Provides an enquiry form for visitors.
-- **Contact (contact.html):** Provides business contact and service-area information.
+## 2. Website Objectives
 
-## 3. Technologies Used
+The website was developed to:
 
-- **HTML5:** Website structure and content.
-- **CSS3:** Styling, layouts and responsive design.
-- **JavaScript:** Form validation, product searching, category filtering, image lightbox and interactive feedback.
-- **GitHub:** Source code management and version control.
-- **GitHub Pages:** Website hosting.
+- Introduce GreenNest Poultry Supplies to potential customers.
+- Display available poultry products and supplies.
+- Provide information about the business.
+- Allow customers to make product and service enquiries.
+- Allow visitors to send general messages.
+- Improve the accessibility and usability of the website.
+- Establish an online presence through GitHub Pages.
 
-## 4. Repository Structure
+## 3. Website Pages
 
-The project is organised into the following folders and files:
+The website consists of five main pages.
 
-- `css/` – Contains the external stylesheet.
-- `Images/` – Contains website images.
-- `js/` – Contains JavaScript functionality.
-- `wireframes/` – Contains the website wireframe.
-- `screenshots/` – Contains desktop, tablet and mobile testing screenshots.
-- `index.html` – Home page.
-- `about.html` – About page.
-- `products.html` – Products page.
-- `enquiry.html` – Enquiry page.
-- `contact.html` – Contact page.
-- `README.md` – Project documentation.
+### 3.1 Home Page
 
-## 5. Part 2: CSS Styling and Responsive Design
+The homepage introduces GreenNest Poultry Supplies and provides navigation to the other website pages. It includes links that allow visitors to view products and submit enquiries.
 
-### 5.1 External Stylesheet
+### 3.2 About Page
 
-An external CSS stylesheet is used to control the appearance of the website. The stylesheet is located at `css/style.css` and is linked to the HTML pages.
+The About page provides information about GreenNest Poultry Supplies, its purpose and its business activities.
 
-This allows the website pages to share consistent styling and makes future updates easier.
+### 3.3 Products Page
 
-### 5.2 Base Styling and CSS Reset
+The Products page displays poultry products and supplies. JavaScript functionality allows visitors to search for products and filter products according to their categories. Product images can also be opened in a larger lightbox view.
 
-A CSS reset has been applied to improve consistency between browsers. The universal selector and pseudo-elements use `box-sizing: border-box`.
+### 3.4 Enquiries Page
 
-Base styles have also been applied to the body, images, headings and other website elements.
+The Enquiries page allows customers to submit questions about products, quantities and availability.
 
-### 5.3 Typography
+The form includes HTML5 validation and JavaScript validation. It uses AJAX and Formspree to process submissions without requiring the customer to leave the webpage.
 
-A consistent font family, font sizes, colours and heading styles have been used to improve readability and maintain a professional appearance.
+For egg enquiries, the website provides an estimated price of R55 per tray. The final price and availability are subject to confirmation.
 
-### 5.4 Layout
+### 3.5 Contact Page
 
-CSS Flexbox and Grid techniques are used to organise website content. Product cards are arranged in columns on larger screens and adjust to smaller screens.
+The Contact page provides business contact information and a general contact form.
 
-### 5.5 Visual Styling and Pseudo-classes
+The form collects the customer's full name, email address, phone number, message type and full message.
 
-The website includes consistent colours, backgrounds, spacing, buttons, cards and form styling.
+JavaScript validates the information and prepares an email addressed to the business email address. The customer can review and send the email through their email application.
 
-Hover and focus effects provide visual feedback when visitors interact with links, buttons and form controls.
+## 4. Technologies Used
 
-## 6. Responsive Design
+The website was developed using:
 
-### 6.1 Responsive Breakpoints
+- HTML5 – Used to structure the website pages and forms.
+- CSS3 – Used for website styling, layout, responsiveness and transitions.
+- JavaScript – Used to implement interactive features, form validation and dynamic functionality.
+- Formspree – Used to receive and process product enquiry submissions.
+- GitHub – Used for version control and repository management.
+- GitHub Pages – Used to publish and host the website.
 
-Media queries have been added to adjust the website layout for different screen sizes.
+## 5. Part 1: Website Development
 
-- Desktop: Larger screens.
-- Tablet: Screens up to 900px.
-- Mobile: Screens up to 600px.
+The initial development involved creating the website structure and establishing the main pages.
 
-### 6.2 Relative Units
+The project included:
 
-Responsive sizing techniques are used to help content adjust to different screen sizes. Flexible widths and maximum-width rules help prevent content from overflowing.
+- Creating the homepage.
+- Developing the About page.
+- Creating the Products page.
+- Developing the Enquiries page.
+- Creating the Contact page.
+- Adding website navigation.
+- Organising website images and resources.
+- Establishing the basic website layout.
 
-### 6.3 Responsive Images
+## 6. Part 2: Website Styling and Responsiveness
 
-Images are styled to remain within their containers using responsive image sizing. The project uses the existing product image in the website.
+Part 2 focused on improving the appearance and usability of the website through CSS.
 
-Separate image sizes and multiple image sources using `srcset` have not yet been implemented.
+The improvements included:
 
-### 6.4 Testing and Iteration
+- Applying consistent colours and typography.
+- Improving navigation and page layouts.
+- Styling buttons, forms and product sections.
+- Organising content into readable sections.
+- Improving the presentation of product images.
+- Implementing responsive layouts for different screen sizes.
+- Testing the website on mobile devices, tablets and laptops.
 
-The website was tested using Google Chrome Developer Tools and its responsive device preview.
+## 7. Part 3: Functionality and SEO Enhancements
 
-The following screen layouts were checked:
+Part 3 focused on introducing JavaScript functionality, improving search engine optimisation and implementing additional form features.
 
-- Desktop layout.
-- Tablet layout.
-- Mobile layout.
+### 7.1 JavaScript Enhancements
 
-The tests checked navigation, image display, product cards, text readability, page layout and the enquiry form.
+The following JavaScript features were implemented:
 
-## 7. Part 3: JavaScript Functionality
+**Form Validation**
 
-JavaScript was added to improve the website's interactivity and provide visitors with a better user experience.
+JavaScript checks customer input before processing form submissions. HTML5 validation attributes are also used to ensure that required information is provided and that input formats are appropriate.
 
-The JavaScript code is stored in `js/script.js`.
+**AJAX Enquiry Submission**
 
-### 7.1 Enquiry Form Validation
+The product enquiry form uses the Fetch API to submit information asynchronously to Formspree.
 
-The enquiry form uses JavaScript to validate information entered by visitors.
+The submission process includes:
+- Preventing the default form submission.
+- Checking the validity of customer information.
+- Sending form data to Formspree.
+- Displaying a submission confirmation.
+- Displaying an error message if submission fails.
+- Resetting the form after successful submission.
 
-The form checks that required fields are completed and that the selected product, quantity and quantity unit are compatible.
+**Dynamic Product Search and Filtering**
 
-A confirmation message is displayed when the form passes validation.
+Visitors can search for products using keywords and filter displayed products according to their categories.
 
-For fresh egg enquiries, an estimated amount is calculated using R55 per tray. The displayed amount is an estimate and is subject to confirmation.
+**Product Image Lightbox**
 
-The form demonstrates front-end validation and feedback. It does not automatically send enquiries to a server or store customer information in a database.
+Visitors can click product images to view larger versions. The lightbox can be closed using its close control or the Escape key.
 
-### 7.2 Product Search
+**Scroll Animations**
 
-A product search feature allows visitors to search for products using keywords.
+JavaScript and CSS are used to introduce animations when selected website elements enter the visible screen area.
 
-The search function checks product information and displays matching products.
+**Contact Form Email Preparation**
 
-### 7.3 Product Category Filtering
+The Contact form uses JavaScript to validate the customer's information and prepare an email containing the submitted details. The email is addressed to the GreenNest business email address and can be sent through the customer's email application.
 
-Visitors can filter products according to their selected category.
+### 7.2 Search Engine Optimisation
 
-This makes it easier to find specific poultry products and supplies.
+SEO improvements were implemented to improve the website's structure and visibility to search engines.
 
-### 7.4 Product Image Lightbox
+The improvements include:
 
-An image lightbox allows visitors to enlarge product images.
+- Adding descriptive page titles.
+- Adding individual meta descriptions.
+- Including relevant keywords.
+- Adding author and robots metadata.
+- Improving heading structures.
+- Adding descriptive image alternative text.
+- Improving internal navigation links.
+- Using descriptive page names.
+- Improving mobile responsiveness.
 
-Visitors can close the enlarged image using the close button or the Escape key.
+### 7.3 Technical SEO Files
 
-### 7.5 Scroll Animations
+Two additional files were created.
 
-Scroll animations provide visual effects as visitors move through the website.
+**robots.txt**
 
-Website cards and selected content elements appear with a fade-in effect.
+This file provides instructions to search engine crawlers about accessing the website and identifies the sitemap location.
 
-### 7.6 Contact Functionality
+**sitemap.xml**
 
-The website includes a business email link on the Contact page.
+This file lists the five main website pages to help search engines discover the website's structure.
 
-The JavaScript file also contains contact-form email-draft functionality for a compatible contact form. The current Contact page does not contain that form.
+### 7.4 Website Performance and Security
 
-The email-draft functionality uses the visitor's default email application and does not send an email automatically.
+The website uses responsive design and organised HTML, CSS and JavaScript files.
 
-## 8. SEO and Accessibility Improvements
+HTML5 form validation and HTTPS hosting through GitHub Pages are also used as part of the website's functionality and security practices.
 
-Search Engine Optimisation (SEO) and accessibility improvements were made across the website pages.
+## 8. Website Testing
 
-### 8.1 SEO Metadata
+The website was tested to check its functionality and usability.
 
-The HTML pages were updated with improved metadata, including:
+The testing included:
 
-- Descriptive page titles.
-- Relevant meta descriptions.
-- Keywords related to poultry products and services.
-- Author information.
-- Search engine indexing instructions.
+- Opening and navigating between all five website pages.
+- Checking product search functionality.
+- Checking product category filtering.
+- Opening and closing product images using the lightbox.
+- Testing scroll animations.
+- Checking required form fields.
+- Testing enquiry form submissions through Formspree.
+- Confirming that successful enquiries appear in the Formspree inbox.
+- Testing the Contact form and checking that the prepared email contains the customer's information.
+- Checking the website on mobile phones, tablets and laptops.
 
-These improvements help search engines understand the content and purpose of each page.
+The website was also checked after deployment to ensure that the published pages were accessible.
 
-### 8.2 Heading Structure
+## 9. Repository Structure
 
-Page headings were improved to make the content easier to understand.
+The project is organised as follows:
 
-Descriptive headings were added to identify the main topics and sections on each page.
-
-### 8.3 Image Accessibility
-
-Descriptive alternative text was added to relevant product and website images.
-
-This helps visitors using screen readers understand the purpose of the images.
-
-### 8.4 Navigation Accessibility
-
-Navigation elements include descriptive labels.
-
-The current page is identified using `aria-current="page"` to help visitors understand which page they are viewing.
-
-### 8.5 Form Accessibility
-
-Form fields use labels connected to their corresponding input elements.
-
-The enquiry form also includes required-field validation and an accessible status message for JavaScript feedback.
-
-## 9. Part 1 Improvements
-
-The following improvements were made in response to earlier project feedback:
-
-- Improved the project documentation and README structure.
-- Added a website wireframe in the `wireframes/` folder.
-- Organised the product image inside the `Images/` folder.
-- Corrected website navigation links to match the actual lowercase HTML filenames.
-- Improved website styling and page consistency.
-- Added responsive design testing evidence.
-- Improved the organisation of the website files.
+```text
+GreenNest-Poultry-Website/
+│
+├── index.html
+├── about.html
+├── products.html
+├── enquiry.html
+├── contact.html
+├── robots.txt
+├── sitemap.xml
+├── README.md
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── script.js
+│
+├── Images/
+│
+├── wireframes/
+│
+└── screenshots/
+```
 
 ## 10. Changelog
 
-### Part 1
+The changelog records the development and improvements made to the website.
+
+### Part 1: Initial Website Development
 
 - Created the initial GreenNest Poultry Supplies website.
-- Added the main HTML pages.
-- Added the initial website images and navigation.
-- Created the initial website wireframe.
+- Developed the Home, About, Products, Enquiries and Contact pages.
+- Added navigation links between the pages.
+- Established the initial website structure and content.
+- Added initial product and business information.
 
-### Part 2
+### Part 2: Styling and Responsiveness
 
-- Improved the external CSS stylesheet.
-- Added CSS reset and typography styling.
-- Improved layouts using Grid and Flexbox.
-- Added hover and focus effects.
-- Added tablet and mobile media queries.
-- Improved image responsiveness.
-- Updated the enquiry form and JavaScript validation.
-- Corrected image paths and navigation links.
-- Added desktop, tablet and mobile screenshots.
-- Updated project documentation.
+- Improved the website's visual presentation through CSS.
+- Updated navigation, buttons, forms and content sections.
+- Improved the layout and organisation of product information.
+- Added responsive styling to support mobile phones, tablets and desktop computers.
+- Improved the overall consistency of the website.
 
-### Part 3
+### Part 3: Functionality and SEO
 
-- Improved JavaScript enquiry form validation and feedback.
-- Added product search functionality.
-- Added product category filtering.
-- Added product image lightbox functionality.
-- Added scroll animations.
-- Improved SEO metadata across the website pages.
-- Improved page titles and descriptions.
-- Improved image alternative text.
-- Improved navigation accessibility.
-- Improved form accessibility.
-- Updated the README documentation.
-- Tested the main JavaScript features and website navigation.
+- Added JavaScript validation to the product enquiry form.
+- Integrated Formspree using AJAX to process product enquiries.
+- Added submission confirmation and error messages.
+- Implemented the R55 per tray egg price estimation.
+- Added JavaScript product search and category filtering.
+- Implemented a product image lightbox.
+- Added scroll animations using JavaScript and CSS.
+- Updated all five HTML pages with improved SEO metadata.
+- Improved heading structures and image alternative text.
+- Improved form accessibility through labels and validation attributes.
+- Added a general contact form to contact.html.
+- Implemented JavaScript validation for the general contact form.
+- Added functionality to prepare emails containing customer contact information and messages.
+- Created robots.txt to provide crawler instructions.
+- Created sitemap.xml to list the website's main pages.
+- Updated README documentation to explain the Part 3 improvements.
+- Tested both forms and confirmed successful enquiry processing through Formspree.
+- Tested the website on different devices and screen sizes.
 
-## 11. References
+## 11. Website and Repository Links
 
-- GitHub (n.d.) *GitHub Docs*. Available at: https://docs.github.com/ (Accessed: 3 November 2026).
-- MDN Web Docs (n.d.) *CSS: Cascading Style Sheets*. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS (Accessed: 3 November 2026).
-- MDN Web Docs (n.d.) *HTML forms*. Available at: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms (Accessed: 3 November 2026).
-- MDN Web Docs (n.d.) *JavaScript*. Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript (Accessed: 3 November 2026).
-- MDN Web Docs (n.d.) *Responsive images*. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images (Accessed: 3 November 2026).
-- MDN Web Docs (n.d.) *Using media queries*. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries (Accessed: 3 November 2026).
-- W3C (n.d.) *Web Content Accessibility Guidelines (WCAG) 2.2*. Available at: https://www.w3.org/TR/WCAG22/ (Accessed: 3 November 2026).
-
-## 12. Website and Repository Links
-
-**Live website:**
+**Live Website:**
 
 https://faithnkuna67-cmyk.github.io/GreenNest-Poultry-Website/
 
-**GitHub repository:**
+**GitHub Repository:**
 
 https://github.com/faithnkuna67-cmyk/GreenNest-Poultry-Website
 
+## 12. References
+
+The following online resources were consulted during the development and improvement of the website.
+
+### HTML and CSS
+
+- Mozilla Developer Network (MDN) (n.d.) *HTML: HyperText Markup Language*. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML (Accessed: 3 November 2026).
+
+- Mozilla Developer Network (MDN) (n.d.) *CSS: Cascading Style Sheets*. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS (Accessed: 3 November 2026).
+
+### JavaScript and Form Functionality
+
+- Mozilla Developer Network (MDN) (n.d.) *JavaScript*. Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript (Accessed: 3 November 2026).
+
+- Mozilla Developer Network (MDN) (n.d.) *Fetch API*. Available at: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API (Accessed: 3 November 2026).
+
+- Formspree (n.d.) *Formspree Documentation*. Available at: https://help.formspree.io/ (Accessed: 3 November 2026).
+
+### Search Engine Optimisation
+
+- Google Search Central (n.d.) *SEO Starter Guide*. Available at: https://developers.google.com/search/docs/fundamentals/seo-starter-guide (Accessed: 3 November 2026).
+
+- Google Search Central (n.d.) *Build and Submit a Sitemap*. Available at: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap (Accessed: 3 November 2026).
+
+### Website Hosting and Repository Management
+
+- GitHub Docs (n.d.) *GitHub Pages Documentation*. Available at: https://docs.github.com/en/pages (Accessed: 3 November 2026).
+
 ---
 
-**Project:** GreenNest Poultry Supplies  
-**Module:** WEDE5020  
-**Assessment:** Portfolio of Evidence – Parts 1, 2 and 3
+**End of README**
+
+
+
