@@ -15,16 +15,20 @@ document.addEventListener("DOMContentLoaded", function () {
       const message = document.getElementById("formMessage");
 
       if (!enquiryForm.checkValidity()) {
-
         message.textContent =
           "Please complete all required fields correctly.";
-
         enquiryForm.reportValidity();
         return;
       }
 
       const customerName =
         document.getElementById("name").value.trim();
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      const phone =
+        document.getElementById("phone").value.trim();
 
       const product =
         document.getElementById("product").value;
@@ -38,16 +42,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const enquiryType =
         document.getElementById("type").value;
 
-      if (!Number.isInteger(quantity) || quantity < 1) {
+      const additionalMessage =
+        document.getElementById("message").value.trim();
 
+      if (!Number.isInteger(quantity) || quantity < 1) {
         message.textContent =
           "Please enter a valid quantity.";
-
         return;
       }
-
-      // Check that the selected quantity unit
-      // matches the selected product.
 
       const correctUnits = {
         eggs: "trays",
@@ -56,17 +58,13 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       if (correctUnits[product] !== unit) {
-
         message.textContent =
           "Please select the correct quantity unit for your product.";
-
         message.focus();
         return;
       }
 
       let response = "";
-
-      // Fresh egg price calculation.
 
       if (product === "eggs") {
 
@@ -74,41 +72,39 @@ document.addEventListener("DOMContentLoaded", function () {
         const totalCost = quantity * pricePerTray;
 
         response =
-          "Thank you, " + customerName + "! " +
           "Your enquiry for " + quantity +
           " trays of fresh eggs has been received. " +
           "Estimated cost: R" +
           totalCost.toFixed(2) +
-          ". Availability must be confirmed by GreenNest.";
+          ". This is an estimate and must be confirmed by GreenNest.";
 
       }
-
-      // Broiler chicken enquiry.
 
       else if (product === "chicken") {
 
         response =
-          "Thank you, " + customerName + "! " +
           "Your enquiry for " + quantity +
-          " broiler chickens has been captured. " +
-          "Pricing and availability will need to be confirmed.";
+          " broiler chickens has been received. " +
+          "Pricing and availability must be confirmed.";
 
       }
-
-      // Poultry supplies enquiry.
 
       else if (product === "supplies") {
 
         response =
-          "Thank you, " + customerName + "! " +
           "Your enquiry for " + quantity +
-          " poultry supply items has been captured. " +
+          " poultry supply items has been received. " +
           "A quotation and availability confirmation will be required.";
 
       }
 
       message.textContent =
-        response + " Enquiry type: " + enquiryType + ".";
+        "Thank you, " + customerName + "! " +
+        response +
+        " Enquiry type: " + enquiryType + "." +
+        " Your email address is " + email + "." +
+        " Your phone number is " + phone + "." +
+        " Additional information: " + additionalMessage;
 
       message.setAttribute("tabindex", "-1");
       message.focus();
@@ -121,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // ==========================================
-  // 2. PRODUCT SEARCH FUNCTIONALITY
+  // 2. PRODUCT SEARCH AND CATEGORY FILTERING
   // ==========================================
 
   const searchInput =
@@ -150,14 +146,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     products.forEach(function (product) {
 
-      const productName =
-        product.querySelector("h2").textContent.toLowerCase();
+      const heading = product.querySelector("h2");
+      const description = product.querySelector("p");
 
-      const productDescription =
-        product.querySelector("p").textContent.toLowerCase();
+      const productName = heading
+        ? heading.textContent.toLowerCase()
+        : "";
 
-      const category =
-        product.dataset.category;
+      const productDescription = description
+        ? description.textContent.toLowerCase()
+        : "";
+
+      const category = product.dataset.category;
 
       const matchesSearch =
         productName.includes(searchText) ||
@@ -168,36 +168,26 @@ document.addEventListener("DOMContentLoaded", function () {
         category === selectedCategory;
 
       if (matchesSearch && matchesCategory) {
-
         product.hidden = false;
         visibleProducts++;
-
       } else {
-
         product.hidden = true;
-
       }
 
     });
 
     if (noProducts) {
-
       noProducts.hidden = visibleProducts !== 0;
-
     }
 
   }
 
   if (searchInput) {
-
     searchInput.addEventListener("input", filterProducts);
-
   }
 
   if (categoryFilter) {
-
     categoryFilter.addEventListener("change", filterProducts);
-
   }
 
 
@@ -216,6 +206,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const productImages =
     document.querySelectorAll(".product-image img");
+
+  function closeImageLightbox() {
+    if (lightbox) {
+      lightbox.hidden = true;
+    }
+  }
 
   productImages.forEach(function (image) {
 
@@ -238,23 +234,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   });
 
-  function closeImageLightbox() {
-
-    if (lightbox) {
-
-      lightbox.hidden = true;
-
-    }
-
-  }
-
   if (closeLightbox) {
-
     closeLightbox.addEventListener(
       "click",
       closeImageLightbox
     );
-
   }
 
   if (lightbox) {
@@ -262,9 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
     lightbox.addEventListener("click", function (event) {
 
       if (event.target === lightbox) {
-
         closeImageLightbox();
-
       }
 
     });
@@ -274,9 +256,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("keydown", function (event) {
 
     if (event.key === "Escape") {
-
       closeImageLightbox();
-
     }
 
   });
@@ -323,9 +303,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
 
     animatedElements.forEach(function (element) {
-
       element.classList.add("visible");
-
     });
 
   }
@@ -351,8 +329,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         contactForm.reportValidity();
 
-        contactMessage.textContent =
-          "Please complete all required contact information.";
+        if (contactMessage) {
+          contactMessage.textContent =
+            "Please complete all required contact information.";
+        }
 
         return;
 
@@ -389,8 +369,10 @@ document.addEventListener("DOMContentLoaded", function () {
         "?subject=" + subject +
         "&body=" + body;
 
-      contactMessage.textContent =
-        "Your message has been validated. Your email application will open so you can review and send the message.";
+      if (contactMessage) {
+        contactMessage.textContent =
+          "Your message has been validated. Your email application will open so you can review and send the message.";
+      }
 
       window.location.href = emailLink;
 
