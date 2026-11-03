@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   // ==========================================
-  // 1. ENQUIRY FORM VALIDATION AND PROCESSING
+  // 1. ENQUIRY FORM VALIDATION AND AJAX SUBMISSION
   // ==========================================
 
   const enquiryForm = document.getElementById("enquiryForm");
 
   if (enquiryForm) {
 
-    enquiryForm.addEventListener("submit", function (event) {
+    enquiryForm.addEventListener("submit", async function (event) {
 
       event.preventDefault();
 
@@ -24,12 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const customerName =
         document.getElementById("name").value.trim();
 
-      const email =
-        document.getElementById("email").value.trim();
-
-      const phone =
-        document.getElementById("phone").value.trim();
-
       const product =
         document.getElementById("product").value;
 
@@ -41,9 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const enquiryType =
         document.getElementById("type").value;
-
-      const additionalMessage =
-        document.getElementById("message").value.trim();
 
       if (!Number.isInteger(quantity) || quantity < 1) {
         message.textContent =
@@ -64,52 +55,98 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      let response = "";
+      const submitButton =
+        enquiryForm.querySelector('button[type="submit"]');
 
-      if (product === "eggs") {
+      const originalButtonText = submitButton
+        ? submitButton.textContent
+        : "";
 
-        const pricePerTray = 55;
-        const totalCost = quantity * pricePerTray;
-
-        response =
-          "Your enquiry for " + quantity +
-          " trays of fresh eggs has been received. " +
-          "Estimated cost: R" +
-          totalCost.toFixed(2) +
-          ". This is an estimate and must be confirmed by GreenNest.";
-
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting...";
       }
 
-      else if (product === "chicken") {
+      message.textContent = "Submitting your enquiry. Please wait.";
 
-        response =
-          "Your enquiry for " + quantity +
-          " broiler chickens has been received. " +
-          "Pricing and availability must be confirmed.";
+      try {
+
+        const formData = new FormData(enquiryForm);
+
+        formData.append(
+          "_subject",
+          "New GreenNest Product Enquiry"
+        );
+
+        const response = await fetch(
+          "https://formspree.io/f/mzeeydqz",
+          {
+            method: "POST",
+            body: formData,
+            headers: {
+              "Accept": "application/json"
+            }
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("The enquiry could not be submitted.");
+        }
+
+        let responseText = "";
+
+        if (product === "eggs") {
+
+          const pricePerTray = 55;
+          const totalCost = quantity * pricePerTray;
+
+          responseText =
+            " Your estimated cost is R" +
+            totalCost.toFixed(2) +
+            " at R55 per tray. This estimate is subject to confirmation.";
+
+        }
+
+        else if (product === "chicken") {
+
+          responseText =
+            " Pricing and availability of broiler chickens must be confirmed.";
+
+        }
+
+        else if (product === "supplies") {
+
+          responseText =
+            " A quotation and product availability confirmation will be required.";
+
+        }
+
+        message.textContent =
+          "Thank you, " + customerName + "!" +
+          " Your " + enquiryType.toLowerCase() +
+          " has been successfully submitted to GreenNest." +
+          responseText;
+
+        enquiryForm.reset();
+
+        message.setAttribute("tabindex", "-1");
+        message.focus();
+
+      } catch (error) {
+
+        message.textContent =
+          "Sorry, your enquiry could not be submitted. Please check your internet connection and try again.";
+
+        message.focus();
+
+      } finally {
+
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+        }
 
       }
-
-      else if (product === "supplies") {
-
-        response =
-          "Your enquiry for " + quantity +
-          " poultry supply items has been received. " +
-          "A quotation and availability confirmation will be required.";
-
-      }
-
-      message.textContent =
-        "Thank you, " + customerName + "! " +
-        response +
-        " Enquiry type: " + enquiryType + "." +
-        " Your email address is " + email + "." +
-        " Your phone number is " + phone + "." +
-        " Additional information: " + additionalMessage;
-
-      message.setAttribute("tabindex", "-1");
-      message.focus();
-
-      enquiryForm.reset();
 
     });
 
