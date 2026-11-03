@@ -4,19 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Explore fresh eggs, broiler chickens and poultry supplies from GreenNest Poultry Supplies in Malelane, Mpumalanga.">
+  <!-- SEO Meta Information -->
+  <meta name="description" content="Explore fresh eggs, broiler chickens and poultry supplies from GreenNest Poultry Supplies in Malelane, Mpumalanga, South Africa.">
 
-  <meta name="keywords" content="GreenNest Poultry Supplies, fresh eggs, broiler chickens, poultry supplies, Malelane poultry">
+  <meta name="keywords" content="GreenNest Poultry Supplies, fresh eggs, broiler chickens, poultry supplies, poultry products, Malelane, Mpumalanga">
 
   <meta name="author" content="GreenNest Poultry Supplies">
 
-  <title>Fresh Eggs and Poultry Products | GreenNest</title>
+  <meta name="robots" content="index, follow">
+
+  <title>Fresh Eggs, Broiler Chickens and Poultry Supplies | GreenNest</title>
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 
 <body>
 
+  <!-- Website Header -->
   <header class="site-header">
     <div class="container nav-wrap">
 
@@ -37,49 +42,54 @@
 
   <main>
 
+    <!-- Products Introduction -->
     <section class="section">
       <div class="container">
 
         <p class="eyebrow">GREENNEST POULTRY SUPPLIES</p>
 
-        <h1>Our Poultry Products</h1>
+        <h1>Fresh Eggs, Broiler Chickens and Poultry Supplies</h1>
 
         <p>
           GreenNest Poultry Supplies provides quality poultry
           products for households, local customers and small
-          businesses in Malelane, Mpumalanga.
+          businesses in Malelane, Mpumalanga, South Africa.
+          Explore our available products and submit an enquiry
+          for pricing and availability.
         </p>
 
         <div class="product-hero-image">
           <img
             src="Images/Products%20images.png"
-            alt="Poultry products available from GreenNest Poultry Supplies">
+            alt="Poultry products available from GreenNest Poultry Supplies"
+            loading="lazy">
         </div>
 
       </div>
     </section>
 
+    <!-- Product Search and Filtering -->
     <section class="section">
       <div class="container">
 
         <h2>Find Your Products</h2>
 
         <p>
-          Search our products or select a category to find
-          what you need.
+          Search our poultry products or select a category
+          to find the products you need.
         </p>
 
         <div class="product-search">
 
-          <label for="productSearch">Search products</label>
+          <label for="productSearch">Search Products</label>
 
           <input
             type="search"
             id="productSearch"
             placeholder="Search eggs, chickens or supplies..."
-          >
+            aria-label="Search poultry products">
 
-          <label for="productCategory">Filter by category</label>
+          <label for="productCategory">Filter by Category</label>
 
           <select id="productCategory">
             <option value="all">All Products</option>
@@ -90,6 +100,7 @@
 
         </div>
 
+        <!-- Product Listings -->
         <div class="cards" id="productList">
 
           <article class="card product" data-category="eggs">
@@ -97,7 +108,8 @@
             <div class="product-image">
               <img
                 src="Images/Products%20images.png"
-                alt="Fresh eggs available from GreenNest">
+                alt="Fresh eggs supplied by GreenNest Poultry Supplies"
+                loading="lazy">
             </div>
 
             <h2>Fresh Eggs</h2>
@@ -110,7 +122,7 @@
             <p class="price">From R55 per tray*</p>
 
             <a class="button" href="enquiry.html">
-              Enquire Now
+              Enquire About Fresh Eggs
             </a>
 
           </article>
@@ -120,20 +132,21 @@
             <div class="product-image">
               <img
                 src="Images/Products%20images.png"
-                alt="Broiler chickens supplied by GreenNest">
+                alt="Broiler chickens supplied by GreenNest Poultry Supplies"
+                loading="lazy">
             </div>
 
             <h2>Broiler Chickens</h2>
 
             <p>
-              Fresh broiler chickens supplied according to
+              Broiler chickens supplied according to
               availability and customer requirements.
             </p>
 
             <p class="price">Price on enquiry*</p>
 
             <a class="button" href="enquiry.html">
-              Enquire Now
+              Enquire About Chickens
             </a>
 
           </article>
@@ -143,7 +156,8 @@
             <div class="product-image">
               <img
                 src="Images/Products%20images.png"
-                alt="Poultry supplies available from GreenNest">
+                alt="Poultry supplies available from GreenNest Poultry Supplies"
+                loading="lazy">
             </div>
 
             <h2>Poultry Supplies</h2>
@@ -156,20 +170,22 @@
             <p class="price">Price on enquiry*</p>
 
             <a class="button" href="enquiry.html">
-              Enquire Now
+              Enquire About Poultry Supplies
             </a>
 
           </article>
 
         </div>
 
-        <p id="noProducts" hidden>
+        <!-- No Search Results Message -->
+        <p id="noProducts" role="status" aria-live="polite" hidden>
           No products match your search. Please try another keyword.
         </p>
 
+        <!-- Product Enquiry Section -->
         <div class="product-enquiry">
 
-          <h2>Interested in our products?</h2>
+          <h2>Interested in Our Poultry Products?</h2>
 
           <p>
             Contact GreenNest Poultry Supplies to enquire about
@@ -192,6 +208,7 @@
 
   </main>
 
+  <!-- Website Footer -->
   <footer class="site-footer">
     <div class="container">
       <p>
@@ -202,15 +219,26 @@
   </footer>
 
   <!-- Product Image Lightbox -->
-  <div id="imageLightbox" class="lightbox" hidden>
-    <button id="closeLightbox" type="button" aria-label="Close image">
+  <div
+    id="imageLightbox"
+    class="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Enlarged product image"
+    hidden>
+
+    <button
+      id="closeLightbox"
+      type="button"
+      aria-label="Close enlarged product image">
       &times;
     </button>
 
     <img id="lightboxImage" src="" alt="">
-  </div>
 
-  <script src="js/script.js" defer></script>
+  </div>
 
 </body>
 </html>
+
+     
