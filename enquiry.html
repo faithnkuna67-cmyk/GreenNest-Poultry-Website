@@ -6,11 +6,13 @@
 
   <meta name="description" content="Enquire about fresh eggs, broiler chickens and poultry supplies from GreenNest Poultry Supplies in Malelane, Mpumalanga.">
 
-  <meta name="keywords" content="poultry enquiries, fresh eggs, broiler chickens, poultry supplies, Malelane">
+  <meta name="keywords" content="poultry enquiries, fresh eggs, broiler chickens, poultry supplies, Malelane, Mpumalanga">
 
   <meta name="author" content="GreenNest Poultry Supplies">
 
-  <title>Product Enquiries | GreenNest Poultry Supplies</title>
+  <meta name="robots" content="index, follow">
+
+  <title>Make a Poultry Product Enquiry | GreenNest Poultry Supplies</title>
 
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
@@ -31,7 +33,7 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="products.html">Products</a>
-        <a class="active" href="enquiry.html">Enquiries</a>
+        <a class="active" href="enquiry.html" aria-current="page">Enquiries</a>
         <a href="contact.html">Contact</a>
       </nav>
 
@@ -46,7 +48,7 @@
 
       <p class="eyebrow">GREENNEST POULTRY SUPPLIES</p>
 
-      <h1>Make a Product Enquiry</h1>
+      <h1>Make a Poultry Product Enquiry</h1>
 
       <p>
         Interested in our poultry products? Complete the
@@ -55,8 +57,9 @@
       </p>
 
       <p>
-        We supply households, local customers and small
-        businesses in Malelane, Mpumalanga.
+        GreenNest Poultry Supplies serves households,
+        local customers and small businesses in Malelane,
+        Mpumalanga.
       </p>
 
 
@@ -76,6 +79,7 @@
           autocomplete="name"
           minlength="3"
           maxlength="80"
+          aria-required="true"
           required>
 
 
@@ -87,6 +91,7 @@
           name="email"
           placeholder="Enter your email address"
           autocomplete="email"
+          aria-required="true"
           required>
 
 
@@ -100,6 +105,7 @@
           autocomplete="tel"
           pattern="[0-9 +()-]{7,20}"
           title="Enter a valid phone number using 7 to 20 digits or phone symbols."
+          aria-required="true"
           required>
 
 
@@ -128,6 +134,7 @@
           name="quantity"
           min="1"
           max="10000"
+          step="1"
           placeholder="Enter the quantity required"
           required>
 
@@ -185,6 +192,7 @@
           minlength="10"
           maxlength="1000"
           placeholder="Tell us more about your requirements..."
+          aria-required="true"
           required></textarea>
 
 
