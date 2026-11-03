@@ -15,30 +15,19 @@ document.addEventListener("DOMContentLoaded", function () {
       const message = document.getElementById("formMessage");
 
       if (!enquiryForm.checkValidity()) {
-        message.textContent =
-          "Please complete all required fields correctly.";
+        message.textContent = "Please complete all required fields correctly.";
         enquiryForm.reportValidity();
         return;
       }
 
-      const customerName =
-        document.getElementById("name").value.trim();
-
-      const product =
-        document.getElementById("product").value;
-
-      const quantity =
-        Number(document.getElementById("quantity").value);
-
-      const unit =
-        document.getElementById("unit").value;
-
-      const enquiryType =
-        document.getElementById("type").value;
+      const customerName = document.getElementById("name").value.trim();
+      const product = document.getElementById("product").value;
+      const quantity = Number(document.getElementById("quantity").value);
+      const unit = document.getElementById("unit").value;
+      const enquiryType = document.getElementById("type").value;
 
       if (!Number.isInteger(quantity) || quantity < 1) {
-        message.textContent =
-          "Please enter a valid quantity.";
+        message.textContent = "Please enter a valid quantity.";
         return;
       }
 
@@ -49,18 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       if (correctUnits[product] !== unit) {
-        message.textContent =
-          "Please select the correct quantity unit for your product.";
+        message.textContent = "Please select the correct quantity unit for your product.";
         message.focus();
         return;
       }
 
-      const submitButton =
-        enquiryForm.querySelector('button[type="submit"]');
-
-      const originalButtonText = submitButton
-        ? submitButton.textContent
-        : "";
+      const submitButton = enquiryForm.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton ? submitButton.textContent : "";
 
       if (submitButton) {
         submitButton.disabled = true;
@@ -73,10 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const formData = new FormData(enquiryForm);
 
-        formData.append(
-          "_subject",
-          "New GreenNest Product Enquiry"
-        );
+        formData.append("_subject", "New GreenNest Product Enquiry");
 
         const response = await fetch(
           "https://formspree.io/f/mzeeydqz",
@@ -157,27 +138,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // 2. PRODUCT SEARCH AND CATEGORY FILTERING
   // ==========================================
 
-  const searchInput =
-    document.getElementById("productSearch");
-
-  const categoryFilter =
-    document.getElementById("productCategory");
-
-  const products =
-    document.querySelectorAll(".product");
-
-  const noProducts =
-    document.getElementById("noProducts");
+  const searchInput = document.getElementById("productSearch");
+  const categoryFilter = document.getElementById("productCategory");
+  const products = document.querySelectorAll(".product");
+  const noProducts = document.getElementById("noProducts");
 
   function filterProducts() {
 
     if (!searchInput || !categoryFilter) return;
 
-    const searchText =
-      searchInput.value.toLowerCase().trim();
-
-    const selectedCategory =
-      categoryFilter.value;
+    const searchText = searchInput.value.toLowerCase().trim();
+    const selectedCategory = categoryFilter.value;
 
     let visibleProducts = 0;
 
@@ -232,17 +203,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // 3. PRODUCT IMAGE LIGHTBOX
   // ==========================================
 
-  const lightbox =
-    document.getElementById("imageLightbox");
+  const lightbox = document.getElementById("imageLightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const closeLightbox = document.getElementById("closeLightbox");
 
-  const lightboxImage =
-    document.getElementById("lightboxImage");
-
-  const closeLightbox =
-    document.getElementById("closeLightbox");
-
-  const productImages =
-    document.querySelectorAll(".product-image img");
+  const productImages = document.querySelectorAll(".product-image img");
 
   function closeImageLightbox() {
     if (lightbox) {
@@ -260,7 +225,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       lightboxImage.src = image.src;
       lightboxImage.alt = image.alt;
-
       lightbox.hidden = false;
 
       if (closeLightbox) {
@@ -272,10 +236,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   if (closeLightbox) {
-    closeLightbox.addEventListener(
-      "click",
-      closeImageLightbox
-    );
+    closeLightbox.addEventListener("click", closeImageLightbox);
   }
 
   if (lightbox) {
@@ -314,11 +275,8 @@ document.addEventListener("DOMContentLoaded", function () {
         entries.forEach(function (entry) {
 
           if (entry.isIntersecting) {
-
             entry.target.classList.add("visible");
-
             observer.unobserve(entry.target);
-
           }
 
         });
@@ -332,7 +290,6 @@ document.addEventListener("DOMContentLoaded", function () {
     animatedElements.forEach(function (element) {
 
       element.classList.add("fade-in");
-
       observer.observe(element);
 
     });
@@ -347,11 +304,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // ==========================================
-  // 5. CONTACT FORM VALIDATION
+  // 5. CONTACT FORM VALIDATION AND EMAIL
   // ==========================================
 
-  const contactForm =
-    document.getElementById("contactForm");
+  const contactForm = document.getElementById("contactForm");
 
   if (contactForm) {
 
@@ -368,7 +324,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (contactMessage) {
           contactMessage.textContent =
-            "Please complete all required contact information.";
+            "Please complete all required contact information correctly.";
         }
 
         return;
@@ -381,14 +337,16 @@ document.addEventListener("DOMContentLoaded", function () {
       const email =
         document.getElementById("contactEmail").value.trim();
 
+      const phone =
+        document.getElementById("contactPhone").value.trim();
+
       const type =
         document.getElementById("contactType").value;
 
       const messageText =
         document.getElementById("contactMessage").value.trim();
 
-      const recipient =
-        "faithnkuna67@gmail.com";
+      const recipient = "faithnkuna67@gmail.com";
 
       const subject =
         encodeURIComponent("GreenNest Website - " + type);
@@ -397,6 +355,7 @@ document.addEventListener("DOMContentLoaded", function () {
         encodeURIComponent(
           "Name: " + name + "\n" +
           "Email: " + email + "\n" +
+          "Phone: " + phone + "\n" +
           "Message type: " + type + "\n\n" +
           "Message:\n" + messageText
         );
@@ -418,3 +377,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+    
+       
+
+      
