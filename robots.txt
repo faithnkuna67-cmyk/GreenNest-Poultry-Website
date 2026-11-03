@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://faithnkuna67-cmyk.github.io/GreenNest-Poultry-Website/sitemap.xml
