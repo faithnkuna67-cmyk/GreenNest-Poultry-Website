@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Contact GreenNest Poultry Supplies in Malelane, Mpumalanga, for information about fresh eggs, broiler chickens and poultry supplies.">
-
   <meta name="keywords" content="contact GreenNest Poultry Supplies, poultry supplies, fresh eggs, broiler chickens, Malelane, Mpumalanga">
-
   <meta name="author" content="GreenNest Poultry Supplies">
-
   <meta name="robots" content="index, follow">
 
   <title>Contact GreenNest Poultry Supplies | Malelane, Mpumalanga</title>
@@ -19,8 +16,6 @@
 </head>
 
 <body>
-
-  <!-- WEBSITE HEADER AND NAVIGATION -->
 
   <header class="site-header">
     <div class="container nav-wrap">
@@ -40,9 +35,6 @@
     </div>
   </header>
 
-
-  <!-- MAIN CONTACT SECTION -->
-
   <main class="section">
     <div class="container narrow">
 
@@ -51,14 +43,11 @@
       <h1>Contact GreenNest Poultry Supplies</h1>
 
       <p>
-        GreenNest Poultry Supplies welcomes enquiries from
+        GreenNest Poultry Supplies welcomes messages from
         households, local customers and small businesses.
-        Contact us for information about our poultry products
-        and services in Malelane, Mpumalanga.
+        Complete the contact form below to send us a general
+        message about our organisation.
       </p>
-
-
-      <!-- BUSINESS INFORMATION -->
 
       <div class="card contact-list">
 
@@ -93,12 +82,84 @@
 
       </div>
 
+      <section aria-labelledby="contact-form-heading">
 
-      <!-- CUSTOMER ENQUIRIES -->
+        <h2 id="contact-form-heading">Send Us a General Message</h2>
 
-      <section aria-labelledby="enquiry-heading">
+        <p>
+          Use this form for general questions, feedback,
+          suggestions or other messages. Product orders and
+          availability enquiries should be submitted through
+          our Enquiries page.
+        </p>
 
-        <h2 id="enquiry-heading">Need Product Information?</h2>
+        <form id="contactForm"
+              action="mailto:faithnkuna67@gmail.com"
+              method="post"
+              enctype="text/plain">
+
+          <label for="contactName">Full Name</label>
+          <input
+            type="text"
+            id="contactName"
+            name="name"
+            placeholder="Enter your full name"
+            minlength="2"
+            maxlength="60"
+            required>
+
+          <label for="contactEmail">Email Address</label>
+          <input
+            type="email"
+            id="contactEmail"
+            name="email"
+            placeholder="Enter your email address"
+            required>
+
+          <label for="contactPhone">Phone Number</label>
+          <input
+            type="tel"
+            id="contactPhone"
+            name="phone"
+            placeholder="e.g. 0821234567"
+            pattern="0[0-9]{9}"
+            title="Enter a valid 10-digit South African phone number"
+            required>
+
+          <label for="contactType">Type of Message</label>
+          <select id="contactType" name="messageType" required>
+            <option value="">Select message type</option>
+            <option value="General Question">General Question</option>
+            <option value="Feedback">Feedback</option>
+            <option value="Suggestion">Suggestion</option>
+            <option value="Business Partnership">Business Partnership</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <label for="contactMessage">Your Message</label>
+          <textarea
+            id="contactMessage"
+            name="message"
+            placeholder="Type your full message here..."
+            minlength="10"
+            maxlength="1000"
+            required></textarea>
+
+          <button class="button" type="submit">
+            Prepare Email
+          </button>
+
+          <p id="contactFormMessage"
+             role="status"
+             aria-live="polite"></p>
+
+        </form>
+
+      </section>
+
+      <section aria-labelledby="product-enquiry-heading">
+
+        <h2 id="product-enquiry-heading">Need Product Information?</h2>
 
         <p>
           Use our online enquiry form to ask about product
@@ -115,17 +176,12 @@
     </div>
   </main>
 
-
-  <!-- WEBSITE FOOTER -->
-
   <footer class="site-footer">
     <div class="container">
-
       <p>
         &copy; 2026 GreenNest Poultry Supplies.
         Academic project website.
       </p>
-
     </div>
   </footer>
 
